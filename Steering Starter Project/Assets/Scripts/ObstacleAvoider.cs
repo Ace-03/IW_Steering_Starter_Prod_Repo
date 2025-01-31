@@ -1,8 +1,7 @@
-﻿public class ObstacleAvoider : Kinematic
+﻿using UnityEngine;
+public class ObstacleAvoider : Kinematic
 {
     ObstacleAvoidance myMoveType;
-
-    //public Kinematic[] myTargets = new Kinematic[4];
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +14,9 @@
     // Update is called once per frame
     protected override void Update()
     {
+        steeringUpdate = new SteeringOutput();
         steeringUpdate = myMoveType.getSteering();
+        steeringUpdate.linear.y = 0f;
         base.Update();
     }
 }
