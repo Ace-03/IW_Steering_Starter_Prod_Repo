@@ -2,9 +2,9 @@
 
 public class ObstacleAvoidance : Seek
 {
-    float avoidDistance = 50f;
+    float avoidDistance = 4f;
 
-    float lookahead = 90f;
+    float lookahead = 5f;
 
     protected override Vector3 getTargetPosition()
     {
